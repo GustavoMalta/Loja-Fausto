@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
 
   public title : String = 'Página inicial';
   produtos: any;
+  public produto: any;
 
   constructor(
     public navCtrl: NavController,
@@ -22,18 +23,25 @@ export class HomePage implements OnInit {
     
   }
 
-  ngOnInit() {
-    
+  ngOnInit() {    
     this.ps.listarProdutos().subscribe(
       dados => this.produtos = dados,
       erro => console.log(erro)
     );
   }
 
-ParaDetalhes(codigo){
-
-  this.navCtrl.push(DetailsPage,codigo)
+  ParaDetalhes(codigo){
+    this.ps.obterProduto(codigo).subscribe(
+              dados => this.produto = dados,
+              erro => console.log(erro)
+            );
+    this.navCtrl.push(DetailsPage,this.produto)
   }
+
+det(){
+
+    
+}
 
 
 }

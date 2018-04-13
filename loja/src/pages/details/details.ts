@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProdutoService } from './../../services/produto';
 
 /**
  * Generated class for the DetailsPage page.
@@ -8,20 +9,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-details',
   templateUrl: 'details.html',
+  providers: [
+    ProdutoService
+  ]
 })
-export class DetailsPage {
+export class DetailsPage implements OnInit{
+  public produto : any;
+  codigo : number = this.navParam.data ;
 
-  constructor(public navCtrl: NavController, public navParam: NavParams) {
+  constructor(public navCtrl: NavController, public navParam: NavParams, public ps : ProdutoService) {
   }
 
-  parametro : any = parseInt(navParam.data) ;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsPage');
+  ngOnInit() {
+    
+  this.produto = this.navParam.data;
+  
+      }
+
+goBack() {
+    this.navCtrl.pop();
   }
-
+  
 }

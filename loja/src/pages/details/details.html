@@ -14,18 +14,16 @@
 
 
 <ion-content padding>
-	<!--
-	<ion-card *ngFor="let p of produtos">
-    <ion-card-header>{{p.descricao}}</ion-card-header>
+	<ion-card>
+    <ion-card-header>{{produto.descricao}}</ion-card-header>
     <ion-card-content>
-      <p>Preço: {{p.preco | currency}}</p>
-      <p>Quantidade: {{p.quantidade}}</p>
-      <p>Cód.: {{p.codigo}}</p>
-      <button ion-button primary >Voltar</button>
+      <img src={{produto.imagem}}>
+      <p>Preço: {{produto.preco | currency}}</p>
+      <p>Quantidade: {{produto.quantidade}}</p>
+      <p>Cód.: {{produto.codigo}}</p>
+      
+      <button ion-button (click)= "goBack()" full >Voltar</button>
     </ion-card-content>
   </ion-card>
--->
-	<p>Alo Teste {{parametro}}</p>
-	<button ion-button>Teste</button>
 
 </ion-content>
