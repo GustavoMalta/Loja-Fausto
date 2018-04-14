@@ -15,15 +15,15 @@
 
 <ion-content padding>
 	<ion-card>
-    <ion-card-header>{{produto.descricao}}</ion-card-header>
+    
+    <ion-card-header>{{produto.descricao}}<br>Cod:{{produto.codigo}}</ion-card-header>
     <ion-card-content>
       <img src={{produto.imagem}}>
-      <p>Preço: {{produto.preco | currency}}</p>
+      <p>Preço: {{produto.preco | currency:'BRL'}}</p>
       <p>Quantidade: {{produto.quantidade}}</p>
-      <p>Cód.: {{produto.codigo}}</p>
-      
+      <p>Especificações:<br>{{produto.especificacao}}</p>
       <button ion-button (click)= "goBack()" full >Voltar</button>
-    </ion-card-content>
+   </ion-card-content>
   </ion-card>
 
 </ion-content>

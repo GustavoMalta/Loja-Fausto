@@ -31,17 +31,15 @@ export class HomePage implements OnInit {
   }
 
   ParaDetalhes(codigo){
+
     this.ps.obterProduto(codigo).subscribe(
-              dados => this.produto = dados,
-              erro => console.log(erro)
-            );
-    this.navCtrl.push(DetailsPage,this.produto)
+        dados => {
+        this.produto =  dados
+        this.navCtrl.push(DetailsPage,this.produto)
+      },
+        erro => console.log(erro)
+      );
+    console.log(codigo);
+        
   }
-
-det(){
-
-    
-}
-
-
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ProdutoService } from './../../services/produto';
 
 /**
@@ -18,20 +18,22 @@ import { ProdutoService } from './../../services/produto';
   ]
 })
 export class DetailsPage implements OnInit{
-  public produto : any;
-  codigo : number = this.navParam.data ;
+  
 
   constructor(public navCtrl: NavController, public navParam: NavParams, public ps : ProdutoService) {
   }
 
-
-  ngOnInit() {
-    
-  this.produto = this.navParam.data;
+  public produto : any;
   
+  ngOnInit() {
+
+    this.produto = this.navParam.data;
+
+    console.log(this.produto);
+
       }
 
-goBack() {
+  goBack() {
     this.navCtrl.pop();
   }
   
