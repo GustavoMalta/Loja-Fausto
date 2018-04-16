@@ -23,15 +23,18 @@ export class DetailsPage implements OnInit{
   constructor(public navCtrl: NavController, public navParam: NavParams, public ps : ProdutoService) {
   }
 
-  public produto : any;
+  public produto : any = {};
   
   ngOnInit() {
 
-    this.produto = this.navParam.data;
+    this.ps.obterProduto(this.navParam.data).subscribe(
+        dados => {
+        this.produto =  dados
+      },
+        erro => console.log(erro)
+      );
 
-    console.log(this.produto);
-
-      }
+  }
 
   goBack() {
     this.navCtrl.pop();
