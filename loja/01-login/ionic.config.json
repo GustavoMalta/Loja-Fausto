@@ -1,8 +1,0 @@
-{
-  "name": "auth0-app",
-  "app_id": "97351afb",
-  "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
-}
